@@ -7,27 +7,42 @@ link.href = 'main.css';
 document.head.appendChild(link);
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Pobierz wszystkie elementy z klasą zaczynającą się od "s-"
-    const elements = document.querySelectorAll('[class^="s-"]');
+ document.addEventListener('DOMContentLoaded', () => {
+    // Funkcja tworzy arkusz stylów
+    const createStylesheet = () => {
+        const styleElement = document.createElement('style'); // Tworzy element <style>
+        document.head.appendChild(styleElement); // Dodaje go do <head>
+        return styleElement.sheet; // Zwraca arkusz stylów
+    };
 
-    elements.forEach(element => {
-        // Pobierz wszystkie klasy elementu
-        const classes = element.className.split(" ");
-        classes.forEach(cls => {
-            // Sprawdź, czy klasa zaczyna się od "s-"
-            if (cls.startsWith("s-")) {
-                // Wyodrębnij wartość po "s-"
-                const fontSize = cls.substring(2);
-                // Spróbuj przekonwertować na liczbę
-                if (!isNaN(fontSize)) {
-                    // Ustaw styl wielkości czcionki
-                    element.style.fontSize = `${fontSize}px`;
-                }
-            }
-        });
-    });
+    const stylesheet = createStylesheet();
+
+    // Funkcja generuje reguły CSS dla klas
+    const generateDynamicCSS = (selectorPrefix, property, min, max) => {
+        for (let i = min; i <= max; i++) {
+            const selector = `${selectorPrefix}-${i}`;
+            const rule = `${selector} { ${property}: ${i}px; }`;
+            stylesheet.insertRule(rule, stylesheet.cssRules.length); // Dodaje regułę CSS
+        }
+    };
+
+    // Generowanie CSS dla marginesów
+    generateDynamicCSS('.m', 'margin', 0, 1000);
+    generateDynamicCSS('.mb', 'margin-bottom', 0, 1000);
+    generateDynamicCSS('.mt', 'margin-top', 0, 1000);
+    generateDynamicCSS('.mr', 'margin-right', 0, 1000);
+    generateDynamicCSS('.ml', 'margin-left', 0, 1000);
+    generateDynamicCSS('.p', 'padding', 0, 1000);
+    generateDynamicCSS('.pb', 'padding-bottom', 0, 1000);
+    generateDynamicCSS('.pt', 'padding-top', 0, 1000);
+    generateDynamicCSS('.pr', 'padding-right', 0, 1000);
+    generateDynamicCSS('.pl', 'padding-left', 0, 1000);
+    generateDynamicCSS('.w', 'width', 0, 1000);
+    generateDynamicCSS('.h', 'height', 0, 1000);
+    generateDynamicCSS('.fs', 'font-size', 0, 1000);
+    console.log('Dynamic CSS generated successfully.');
 });
+
 
 
 
