@@ -7,10 +7,13 @@ link.href = 'main.css';
 document.head.appendChild(link);
 
 
-document.querySelectorAll('[class^="s-"]').forEach(element => {
-const sizeClass =      Array.from(element.classList).find(cls => cls.startsWith('s-'));
-if (sizeClass) {
-const size = sizeClass.replace('s-', '');
-element.style.fontSize = `${size}px`;
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[class^="s-"]').forEach(element => {
+        const sizeClass = Array.from(element.classList).find(cls => cls.startsWith('s-'));
+        if (sizeClass) {
+            const size = sizeClass.replace('s-', '');
+            element.style.fontSize = `${size}px`;
+        }
+    });
 });
+
