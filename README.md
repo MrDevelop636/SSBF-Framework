@@ -1,2 +1,3 @@
 # SSBF-Framework
-SSBF is easy to learn css framework for easly create modern HTML webpages
+SSBF - Simple site build framework 
+Is easy to learn css framework for easly create modern HTML webpages
