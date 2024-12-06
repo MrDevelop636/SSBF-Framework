@@ -7,12 +7,12 @@ link.href = 'main.css';
 document.head.appendChild(link);
 
 
- document.addEventListener('DOMContentLoaded', () => {
-    // Funkcja tworzy arkusz stylów
+
+document.addEventListener('DOMContentLoaded', () => {
     const createStylesheet = () => {
-        const styleElement = document.createElement('style'); // Tworzy element <style>
-        document.head.appendChild(styleElement); // Dodaje go do <head>
-        return styleElement.sheet; // Zwraca arkusz stylów
+        const styleElement = document.createElement('style'); 
+        document.head.appendChild(styleElement); 
+        return styleElement.sheet; 
     };
 
     const stylesheet = createStylesheet();
@@ -22,11 +22,11 @@ document.head.appendChild(link);
         for (let i = min; i <= max; i++) {
             const selector = `${selectorPrefix}-${i}`;
             const rule = `${selector} { ${property}: ${i}px; }`;
-            stylesheet.insertRule(rule, stylesheet.cssRules.length); // Dodaje regułę CSS
+            stylesheet.insertRule(rule, stylesheet.cssRules.length); 
         }
     };
 
-    // Generowanie CSS dla marginesów
+
     generateDynamicCSS('.m', 'margin', 0, 1000);
     generateDynamicCSS('.mb', 'margin-bottom', 0, 1000);
     generateDynamicCSS('.mt', 'margin-top', 0, 1000);
@@ -42,7 +42,3 @@ document.head.appendChild(link);
     generateDynamicCSS('.fs', 'font-size', 0, 1000);
     console.log('Dynamic CSS generated successfully.');
 });
-
-
-
-
