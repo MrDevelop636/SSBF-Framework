@@ -7,14 +7,27 @@ link.href = 'main.css';
 document.head.appendChild(link);
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('[class^="s-"]').forEach(element => {
-        const sizeClass = Array.from(element.classList).find(cls => cls.startsWith('s-'));
-        if (sizeClass) {
-            const size = sizeClass.replace('s-', '');
-            element.style.fontSize = `${size}px`;
-        }
+document.addEventListener("DOMContentLoaded", () => {
+    // Pobierz wszystkie elementy z klasą zaczynającą się od "s-"
+    const elements = document.querySelectorAll('[class^="s-"]');
+
+    elements.forEach(element => {
+        // Pobierz wszystkie klasy elementu
+        const classes = element.className.split(" ");
+        classes.forEach(cls => {
+            // Sprawdź, czy klasa zaczyna się od "s-"
+            if (cls.startsWith("s-")) {
+                // Wyodrębnij wartość po "s-"
+                const fontSize = cls.substring(2);
+                // Spróbuj przekonwertować na liczbę
+                if (!isNaN(fontSize)) {
+                    // Ustaw styl wielkości czcionki
+                    element.style.fontSize = `${fontSize}px`;
+                }
+            }
+        });
     });
 });
+
 
 
