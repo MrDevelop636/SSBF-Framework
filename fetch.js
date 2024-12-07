@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Tworzenie elementu <link> dla CSS
     const link = document.createElement("link");
     link.rel = "stylesheet";  // Określenie, że jest to arkusz stylów
-    link.href = "/css/static.css";  // Ścieżka do pliku CSS (zastąp odpowiednią ścieżką)
+    link.href = "static.css";  // Ścieżka do pliku CSS (zastąp odpowiednią ścieżką)
     document.head.appendChild(link);
 });
 
@@ -18,4 +18,4 @@ function include(file) {
     document.getElementsByTagName('head').item(0).appendChild(script);
 }
 
-include("/js/lib.js");
+include("lib.js");
