@@ -408,6 +408,12 @@ Version: BETA
   .pb-max { padding-bottom: 100%; }
   
 
+  /*padding small*/
+  .ps { padding: 20px; }
+  /*padding medium*/
+  .pm { padding: 30px; }
+  /*padding large*/
+  .pl { padding: 40px; }
 
   /*list style type*/
 
@@ -416,13 +422,65 @@ Version: BETA
   .lst-s { list-style-type: square; }
   .lst-ur { list-style-type: upper-roman; }
   .lst-la { list-style-type: lower-alpha; }
+  .lst-none { list-style-type: none; }
 
 
 
   /*text decoration*/
 
 
+  .td-none { text-decoration: none; }
   .td-ol { text-decoration: overline; }
   .td-lt { text-decoration: line-through; }
   .td-u { text-decoration: underline; }
   .td-uo { text-decoration: underline overline; }
+
+
+
+
+  /*hover*/
+
+
+  .hv-underline:hover { text-decoration: underline; }
+
+
+  .ov-hidden { overflow: hidden; }
+
+
+
+  /*background color*/
+
+
+
+  .bc-red{
+    background-color: red;
+  }
+
+
+
+  /*display*/
+
+
+
+  .iblock{
+    display: inline-block;
+  }
+
+  .block{
+    display: block;
+  }
+
+
+  .inline{
+    display: inline;
+  }
+
+
+/*reset*/
+
+
+*{
+  color: ;
+}
+
+
