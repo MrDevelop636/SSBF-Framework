@@ -1,3 +1,5 @@
+// Author: ZLMTech Version: Beta 
+
 document.addEventListener("DOMContentLoaded", () => {
     // Pobierz wszystkie elementy, które mają klasy zaczynające się od "fs-", "c-", "m-", "p-", "w-", "h-" i "bc-"
     const elements = document.querySelectorAll("[class^='fs-'], [class^='c-'], [class^='m-'], [class^='p-'], [class^='w-'], [class^='h-'], [class^='bc-']");
