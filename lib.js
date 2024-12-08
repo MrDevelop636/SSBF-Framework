@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     // Pobierz wszystkie elementy, które mają klasy zaczynające się od "fs-", "c-", "m-", "p-", "w-", "h-" i "bc-"
-    const elements = document.querySelectorAll("[class^='fs-'], [class^='c-'], [class^='m-'], [class^='p-'], [class^='w-'], [class^='h-'], [class^='bc-']");
+    const elements = document.querySelectorAll("[class^='fs-'], [class^='c-'], [class^='m-'], [class^='p-'], [class^='w-'], [class^='h-'], [class^='bc-'], [class^='fx-']");
 
     elements.forEach(element => {
         try {
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let widthSet = false; // Flaga, by upewnić się, że szerokość została ustawiona
             let heightSet = false; // Flaga, by upewnić się, że wysokość została ustawiona
             let backgroundColorSet = false; // Flaga, by upewnić się, że kolor tła został ustawiony
+            let flexSet = false;
 
             classes.forEach(cls => {
                 // Jeśli klasa zaczyna się od "fs-" (dynamiczny rozmiar czcionki)
@@ -27,6 +28,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     }
                 }
+
+                                // Jeśli klasa zaczyna się od "fs-" (dynamiczny rozmiar czcionki)
+                                if (cls.startsWith("fx-")) {
+                                    const size = parseInt(cls.split("-")[1], 10);
+                                    if (!isNaN(size)) {
+                                        // Ustaw rozmiar czcionki tylko raz
+                                        if (!flexSet) {
+                                            element.style.flex = `${size}`;
+                                            flexSet = true;
+                                        }
+                                    }
+                                }
 
                 // Jeśli klasa zaczyna się od "c-" (dynamiczny kolor)
                 if (cls.startsWith("c-")) {

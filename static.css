@@ -475,12 +475,31 @@ Version: BETA
     display: inline;
   }
 
+  .flex{
+    display: flex;
+  }
 
-/*reset*/
+/*flex direction*/
 
 
-*{
-  color: ;
+  .fd-column{
+    flex-direction: column;
+  }
+
+
+/*justify content*/
+.jc-spacebetween{
+  justify-content: space-between;
 }
+
+/*text transform*/
+
+
+.tt-uppercase{
+  text-transform: uppercase;
+}
+
+/*line height*/
+
 
 
