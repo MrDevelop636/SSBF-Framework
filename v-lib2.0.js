@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Pobierz wszystkie elementy w dokumencie
     const elements = document.querySelectorAll("*");
 
     elements.forEach(element => {
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let flexSet = false;
 
             classes.forEach(cls => {
-                // Dynamiczny rozmiar czcionki (fs-)
                 if (cls.startsWith("fs-")) {
                     const size = parseInt(cls.split("-")[1], 10);
                     if (!isNaN(size) && !fontSizeSet) {
@@ -24,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                // Dynamiczny flex (fx-)
+                
                 if (cls.startsWith("fx-")) {
                     const size = parseInt(cls.split("-")[1], 10);
                     if (!isNaN(size) && !flexSet) {
@@ -33,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                // Dynamiczny kolor tekstu (c-)
+               
                 if (cls.startsWith("c-")) {
                     const color = cls.split("-")[1];
                     if (/^#[0-9A-Fa-f]{6}$|^#[0-9A-Fa-f]{3}$/.test(color) && !colorSet) {
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                // Dynamiczny kolor tła (bc-)
+             
                 if (cls.startsWith("bc-")) {
                     const color = cls.split("-")[1];
                     if (/^#[0-9A-Fa-f]{6}$|^#[0-9A-Fa-f]{3}$/.test(color) && !backgroundColorSet) {
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                // Dynamiczne marginesy (m-)
+               
                 if (cls.startsWith("m-")) {
                     const marginValue = parseInt(cls.split("-")[1], 10);
                     if (!isNaN(marginValue)) {
@@ -70,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                // Dynamiczne paddingi (p-)
+                
                 if (cls.startsWith("p-")) {
                     const paddingValue = parseInt(cls.split("-")[1], 10);
                     if (!isNaN(paddingValue)) {
@@ -89,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                // Dynamiczna szerokość (w-)
+             
                 if (cls.startsWith("w-")) {
                     const widthValue = parseInt(cls.split("-")[1], 10);
                     if (!isNaN(widthValue) && !widthSet) {
@@ -98,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                // Dynamiczna wysokość (h-)
+               
                 if (cls.startsWith("h-")) {
                     const heightValue = parseInt(cls.split("-")[1], 10);
                     if (!isNaN(heightValue) && !heightSet) {
