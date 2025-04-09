@@ -34,20 +34,31 @@ SSBF Framework 2.0
    ``````
     <p class="fs-size(in px)"></p>
    ``````
+Example:
+```
+<p class="fs-16"></p>
+```
 
 ------
 
 ## Dynamic font color
    ``````
-    <p class="c-(color in HEX format before #)"></p>
+    <p class="c-(color in HEX format after #)"></p>
    ``````
-
+Example:
+```
+<p class="c-fffff"></p>
+```
 ------
 
 ## Dynamic background color
    ``````
-    <div class="bc-(color in HEX format before #)"></div>
+    <div class="bc-(color in HEX format after #)"></div>
    ``````
+Example:
+```
+<p class="bc-fffff"></p>
+```
 
 ------
 
@@ -55,21 +66,30 @@ SSBF Framework 2.0
    ``````
     <div class="w-width(in px)"></div>
    ``````
-
+Example:
+```
+<div class="w-100"></div>
+```
 ------
 
 ## Dynamic height
    ``````
     <div class="h-height(in px)"></div>
    ``````
-
+Example:
+```
+<div class="h-100"></div>
+```
 ------
 
 ## Dynamic margin 
    ``````
     <div class="m-margin(in pd)"></div>
    ``````
-
+Example:
+```
+<div class="m-100"></div>
+```
 ------
 
 ## Static css lib 
@@ -117,3 +137,24 @@ When you set variables in this block you must paste this code for load template
 <div data-template="templatename(template folder name)" data-instance-id="templateid(from first element)"></div>
 ```
  When you complete all steps your template is visible on the site
+
+Example:
+
+Load template 
+```
+<template id="hero">
+  {
+    "title": "Hero",
+    "subtitle": "SSBF - Simple Site Build Framework",
+    "link": "#about",
+    "button-text": "Button"
+
+  }
+</template>
+```
+Place template in code
+
+```
+  <div data-template="hero" data-instance-id="hero"></div>
+```
+
