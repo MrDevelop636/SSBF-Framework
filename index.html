@@ -5,50 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SSBF Framework</title>
   <style id="style-injector"></style>
-  <script type="module" src="./loader.js"></script>
+  <script type="module" src="../loader.js"></script>
   <normalize css="true"></normalize>
   <lib static="true"></lib>
 </head>
 <body>
-  <div class="fx-1">
-    <ul class="overflow-hidden bc-939393 m-0 p-0 lst-none">
-      <li class="iblock a-center ps">
-        <a href="#1" class="c-000000 td-none">Strona 1</a>
-      </li>
-      <li class="iblock a-center ps">
-        <a href="#2" class="c-000000 td-none">Strona 2</a>
-      </li>
-      <li class="iblock a-center ps">
-        <a href="#3" class="c-000000 td-none">Strona 3</a>
-      </li>
-      <li class="iblock a-center ps">
-        <a href="#4" class="c-000000 td-none">Strona 4</a>
-      </li>
-    </ul>
-  </div>
-<div data-template="produkt" data-instance-id="produkt1"></div>
-<div data-template="produkt" data-instance-id="produkt2"></div>
-<div data-template="produkt" data-instance-id="produkt3"></div>
-
-<template id="produkt1">
-  {
-    "nazwa": "Produkt 1",
-    "cena": "100 zł"
-  }
+<div data-template="navbar" data-instance-id="nav"></div>
+  <div data-template="hero" data-instance-id="hero"></div>
+<div data-template="footer" data-instance-id="footer"></div>
+<template id="footer">
+{
+    "text": "VAIOLabs"
+}
 </template>
 
-<template id="produkt2">
-  {
-    "nazwa": "Produkt 2",
-    "cena": "100 zł"
-  }
+<template id="nav">
+{
+    "title": "VAIOLabs",
+    "link1": "about.html",
+    "link2": "contact.html",
+    "link3": "projects.html",
+    "link4": "sponsors.html",
+    "label1": "About",
+    "label2": "Contact",
+    "label3": "Projects",
+    "label4": "Sponsors"
+}
 </template>
 
-<template id="produkt3">
-  {
-    "nazwa": "Produkt 3",
-    "cena": "100 zł"
-  }
+  <template id="hero">
+{
+    "title": "Hero",
+    "subtitle": "SSBF - Simple Site Build Framework",
+    "link": "#about",
+    "button-text": "Button"
+}
 </template>
 </body>
 </html>

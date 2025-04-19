@@ -4,7 +4,7 @@
   if (tag && tag.getAttribute('static')?.toLowerCase() === 'true') {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '../lib/static.css';
+    link.href = '../lib/ssbf-static/static.css';
     document.head.appendChild(link);
     console.log('✅ Plik static.css został załadowany.');
   } else {

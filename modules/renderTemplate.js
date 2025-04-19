@@ -1,4 +1,4 @@
-export async function renderTemplateInstances() {
+export async function renderTemplate() {
   const templateElements = document.querySelectorAll("[data-template]"); // Wybiera wszystkie elementy z data-template
 
   for (const templateElement of templateElements) {
@@ -25,8 +25,14 @@ export async function renderTemplateInstances() {
 
       let renderedTemplate = htmlTemplate;
       for (const key in jsonData) {
-        renderedTemplate = renderedTemplate.replace(new RegExp(`{{${key}}}`, 'g'), jsonData[key]);
-      }
+  const value = (typeof jsonData[key] === 'object' && 'value' in jsonData[key])
+    ? jsonData[key].value
+    : jsonData[key];
+
+  renderedTemplate = renderedTemplate.replace(new RegExp(`{{${key}}}`, 'g'), value);
+  renderedTemplate = renderedTemplate.replace(new RegExp(`{{${key}\\.value}}`, 'g'), value);
+}
+
 
       templateElement.innerHTML = renderedTemplate;
 
