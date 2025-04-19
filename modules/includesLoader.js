@@ -35,4 +35,4 @@ export function loadModule(moduleName) {
         .catch(error => {
             console.error("Błąd podczas ładowania modułu:", error);
         });
-}
+

@@ -9,11 +9,15 @@ import { heightModule } from './modules/height.js';
 import { renderTemplate } from './modules/renderTemplate.js';
 import { loadModule } from './modules/includesLoader.js';          
 import { badgeModule } from './modules/badgeModule.js';     
+import { loadModule } from './modules/includesLoader.js';
+
 
 
 async function frameworkLoad() {
   try {
+
     await badgeModule();
+
     await normalizeLoader();
     await cssLoader();
     await bgColorModule();
